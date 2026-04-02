@@ -1,0 +1,162 @@
+/* --- VARIABLES ET COULEURS --- */
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-green: #22c55e;
+    --accent-red: #ef4444;
+    --accent-blue: #0ea5e9;
+    --accent-orange: #f97316;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- EN-TÊTE --- */
+header {
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--card-bg);
+}
+
+header span {
+    color: var(--accent-red);
+}
+
+/* --- GRILLE PRINCIPALE (2x2) --- */
+.dashboard-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* --- CARTES GÉNÉRIQUES --- */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-top: 4px solid transparent;
+}
+
+.card-title {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-value {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.card-unit {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-top: -10px;
+}
+
+/* --- STYLES SPÉCIFIQUES DES CARTES --- */
+
+/* 1. Vitesse */
+.speed-card {
+    border-top-color: var(--accent-green);
+}
+
+.speed-card .card-value {
+    color: var(--accent-green);
+    text-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
+
+/* 2. Rythme Cardiaque (avec animation) */
+.bpm-card {
+    border-top-color: var(--accent-red);
+}
+
+.bpm-card .card-value {
+    color: var(--accent-red);
+    text-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    animation: heartbeat 1s infinite;
+    /* Animation battement */
+}
+
+/* 3. Oxygène (SpO2) */
+.spo2-card {
+    border-top-color: var(--accent-blue);
+}
+
+.spo2-card .card-value {
+    color: var(--accent-blue);
+    text-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+}
+
+/* 4. Température */
+.temp-card {
+    border-top-color: var(--accent-orange);
+}
+
+.temp-card .card-value {
+    color: var(--accent-orange);
+    text-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.08);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.04);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* --- ZONES D'ALERTE (Pied de page) --- */
+.status-bar {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-top: 2px solid #334155;
+}
+
+.status-ok { color: var(--accent-green); font-weight: bold; }
+.status-warning { color: #facc15; font-weight: bold; } /* jaune */
+.status-danger { color: var(--accent-red); font-weight: bold; }

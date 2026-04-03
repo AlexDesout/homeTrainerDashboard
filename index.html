@@ -1,50 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeTrainer - Dashboard</title>
-      <link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Badge</title>
+  <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
 
-    <header>
-        Simulation <span>Physiologique</span> Active
-    </header>
+  <div class="container">
+    <div class="card">
+      <h1>Accès sécurisé</h1>
+      <p class="subtitle">Veuillez vous connecter à l'aide de votre badge</p>
 
-    <div class="dashboard-container">
-        <div class="card speed-card">
-            <div class="card-title">Vitesse</div>
-            <div class="card-value" id="val-speed">aucune valeur</div>
-            <div class="card-unit">km/h</div>
-        </div>
+      <div class="badge-icon">🪪</div>
 
-        <div class="card bpm-card">
-            <div class="card-title">Fréq. Cardiaque</div>
-            <div class="card-value" id="val-bpm">aucune valeur</div>
-            <div class="card-unit">BPM</div>
-        </div>
+      <p class="instruction">
+        Approchez votre badge du lecteur pour continuer
+      </p>
 
-        <div class="card spo2-card">
-            <div class="card-title">Oxygène (SpO2)</div>
-            <div class="card-value" id="val-spo2">aucune valeur</div>
-            <div class="card-unit">%</div>
-        </div>
-
-        <div class="card temp-card">
-            <div class="card-title">Température</div>
-            <div class="card-value" id="val-temp">aucune valeur</div>
-            <div class="card-unit">°C</div>
-        </div>
+      <div class="status">
+        En attente du badge...
+      </div>
     </div>
-
-    <div class="status-bar" id="status-message">
-        Statut du joueur : <span class="status-ok">AUCUNE VALEUR</span>
-    </div>
-    <script src="app.js"></script>
+  </div>
+<script src="login.js"></script>
 </body>
-
 </html>
